@@ -14,3 +14,21 @@ This Terraform configuration sets up a Docker container running an Nginx web ser
 
 This Terraform configuration uses the `docker` provider to interact with Docker. It defines a Docker image named "nginx" and a Docker container based on that image. The container is configured to expose port 80 internally and port 8000 externally.
 
+
+
+### Providers
+
+In Terraform, a provider is responsible for interacting with APIs to manage resources. Providers are used to abstract the underlying infrastructure and services. In this example, the `docker` provider is used to manage Docker containers and images. It allows Terraform to communicate with the Docker API to create, update, and delete Docker resources.
+
+The Docker provider configuration specifies the source and version of the provider plugin to use:
+
+```hcl
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 3.0.1"
+    }
+  }
+}
+
