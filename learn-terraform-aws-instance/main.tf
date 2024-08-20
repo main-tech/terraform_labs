@@ -1,4 +1,14 @@
 terraform {
+
+  cloud {
+
+    organization = "main-tech-org"
+
+    workspaces {
+      name = "ec2test"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
